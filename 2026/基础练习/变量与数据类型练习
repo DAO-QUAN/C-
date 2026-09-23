@@ -1,0 +1,156 @@
+/*
+ * ============================================================
+ *  C 语言入门 — 变量与数据类型  练习题
+ * ============================================================
+ */
+
+/*
+ * 知识回顾：
+ *   int     → 整数（%d）
+ *   float   → 单精度小数（%f）
+ *   double  → 双精度小数（%lf）
+ *   char    → 字符（%c）
+ *   sizeof  → 获取类型/变量占用的字节数
+ *
+ *   printf("格式", 变量);   // 输出
+ *   scanf("格式", &变量);   // 输入
+ */
+
+#include <stdio.h>
+
+int main() {
+
+    // ─── 练习1：声明变量并输出 ─────────────────────────────
+    // 请声明一个 int 变量 age，赋值为你的年龄，然后打印 "我今年 XX 岁"
+    // >>> 写在这里 <<<
+
+    int age = 22;
+    printf("我今年%d岁",age);
+
+
+
+
+
+
+    // ─── 练习2：数据类型的大小 ─────────────────────────────
+    // 使用 sizeof 打印出 int、float、double、char 各自占几个字节
+    // 例如：printf("int 占 %d 字节\n", sizeof(int));
+    // >>> 写在这里 <<<
+
+    sizeof(int);
+    printf("int  占 %zu 字节\n",sizeof(int));
+    sizeof(float);
+    printf("float 占 %zu 字节\n",sizeof(float));
+    sizeof(double);
+    printf("double  占 %zu 字节\n",sizeof(double));
+    sizeof(char);
+    printf("char 占 %zu 字节\n",sizeof(char));
+
+
+
+
+    // sizeof(float);
+    // printf("float 占 %f 字节\n");
+    // sizeof(double);
+    // printf("double  占 %e 字节\n");
+    // sizeof(char);
+    // printf("char 占 %c 字节\n");
+
+
+
+
+
+    // ─── 练习3：交换两个变量 ─────────────────────────────
+    // 定义 int a = 10, b = 20，交换它们的值，然后打印交换后的结果
+    // 要求：用第三个变量 temp 来交换
+    // >>> 写在这里 <<<
+
+    int  a = 10 , b = 20 ,temp;
+    temp = a;
+    a = b ;
+    b = temp;
+    printf("a = %d , b = %d\n",a , b);
+
+
+
+
+    // ─── 练习4：格式化输出 ─────────────────────────────
+    // 定义：
+    //   char name[] = "张三";    (或 char name = 'Z';)
+    //   int  age = 20;
+    //   float height = 175.5;
+    // 打印格式："
+    // 我叫 张三，今年 20 岁，身高 175.5 cm"
+    // >>> 写在这里 <<<
+
+    char name[] ="张三";
+    int age2 = 20;
+    float height = 175.5;
+    printf("我叫 %s 今年 %d 岁，身高 %f cm\n",name,age2,height);
+
+
+
+
+    // ─── 练习5：输入并计算 ─────────────────────────────
+    // 从键盘输入两个整数，计算它们的和、差、积、商，并打印
+    //
+    // ★ 详细提示（一步步来）：
+    //
+    // ① 定义三个变量：int x, y;  double result;
+    // ② 用 printf 提示用户输入，例如："请输入两个整数："
+    // ③ 用 scanf("%d %d", &x, &y);  读取两个整数
+    //    ※ scanf 的返回值表示成功读取了几个数，不是判断 x,y 是否为空
+    //    ※ int 类型不是指针，不能用 NULL 判断，用 if (x == 0) 判断值
+    // ④ 分别计算：
+    //      和： x + y
+    //      差： x - y
+    //      积： x * y
+    //      商： (double)x / y    ← 把其中一个转成 double，除法结果才是小数
+    // ⑤ 用 printf 打印结果，注意格式：
+    //      整数用 %d，小数用 %.2f（保留2位小数）
+    //
+    // 参考输出：
+    //   请输入两个整数：10 3
+    //   和 = 13
+    //   差 = 7
+    //   积 = 30
+    //   商 = 3.33
+    //
+    // >>> 写在这里 <<<
+    int x, y;
+    double result;
+
+    printf("请输入两个整数：");
+    scanf("%d %d", &x, &y);
+
+    // 计算和
+    result = x + y;
+    printf("和 = %.0f\n", result);
+
+    // 计算差
+    result = x - y;
+    printf("差 = %.0f\n",result);
+
+    //计算积
+    result = x * y;
+    printf("积 = %.0f\n",result);
+
+    //计算商
+    result = (double)x / y;
+    printf("商 = %.2f\n",result);
+    // >>> 你来写剩下的！ <<<
+    
+    
+
+
+
+
+
+
+    return 0;
+}
+/*
+ * ============================================================
+ *  编译运行：gcc basics_variables.c -o basics_variables && ./basics_variables
+ * ============================================================
+ */
